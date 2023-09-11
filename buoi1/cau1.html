@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(mass, height) {
+            this.mass = mass
+            this.height = height
+        }
+
+        const calcBMIs = ({
+            mass,
+            height
+        }) => {
+            return mass / (height * height)
+        }
+
+        const test1 = {
+            MarkBMI: calcBMIs(new Person(78, 1.69)),
+            JohnBMI: calcBMIs(new Person(92, 1.95)),
+            markHigherBMI: () => {
+                return this.MarkBMI > this.JohnBMI
+            }
+        }
+        const test2 = {
+            MarkBMI: calcBMIs(new Person(95, 1.88)),
+            JohnBMI: calcBMIs(new Person(85, 1.76)),
+            markHigherBMI: () => {
+                return this.MarkBMI > this.JohnBMI
+            }
+        }
+        console.table([test1, test2])
+    </script>
+</body>
+
+</html>
